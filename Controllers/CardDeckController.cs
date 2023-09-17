@@ -20,7 +20,7 @@ namespace microservice.Controllers
         }
 
         [HttpGet(Name = "GetRandomCard")]
-        public Card Get()
+        public string Get()
         {
             var random = new Random();
             int index = random.Next(_cardDeck.Cards.Count);
@@ -28,3 +28,4 @@ namespace microservice.Controllers
         }
     }
 }
+

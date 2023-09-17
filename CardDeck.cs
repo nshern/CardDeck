@@ -1,64 +1,32 @@
+
+using System.Collections.Generic;
+
 namespace microservice
 {
-    public enum Suit
-    {
-        Hearts,
-        Diamonds,
-        Clubs,
-        Spades,
-        Joker
-    }
-
-    public enum Rank
-    {
-        Ace = 1,
-        Two,
-        Three,
-        Four,
-        Five,
-        Six,
-        Seven,
-        Eight,
-        Nine,
-        Ten,
-        Jack,
-        Queen,
-        King,
-        Joker
-    }
-
-    public class Card
-    {
-        public Suit Suit { get; set; }
-        public Rank Rank { get; set; }
-    }
-
     public class CardDeck
     {
-        public List<Card> Cards { get; set; }
+        public List<string> Cards { get; private set; }
 
         public CardDeck()
         {
-            Cards = new List<Card>();
+            Cards = new List<string>();
 
-            foreach (Suit suit in Enum.GetValues(typeof(Suit)))
+            string[] suits = { "Hearts", "Diamonds", "Clubs", "Spades" };
+            string[] ranks = { "Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
+ "Ten", "Jack", "Queen", "King" };
+
+            foreach (string suit in suits)
             {
-                if (suit != Suit.Joker)
+                foreach (string rank in ranks)
                 {
-                    foreach (Rank rank in Enum.GetValues(typeof(Rank)))
-                    {
-                        if (rank != Rank.Joker)
-                        {
-                            Cards.Add(new Card { Suit = suit, Rank = rank });
-                        }
-                    }
+                    Cards.Add($"{rank} of {suit}");
                 }
             }
 
             // Add three jokers
             for (int i = 0; i < 3; i++)
             {
-                Cards.Add(new Card { Suit = Suit.Joker, Rank = Rank.Joker });
+                Cards.Add("Joker");
             }
         }
     }
