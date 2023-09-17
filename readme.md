@@ -2,7 +2,7 @@
 
 ## Usage
 ````
-curl https://mycarddeck.azurewebsites.net/CardDeck
+curl https://carddeckmicroservice.azurewebsites.net/carddeck
 ````
 
 ## Build from source
