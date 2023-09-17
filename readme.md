@@ -1,9 +1,11 @@
-# Usage
+# Besvarelse til Afleveringsopgave: Mikroservice uge 2 
+
+## Usage
 ````
 curl https://mycarddeck.azurewebsites.net/CardDeck
 ````
 
-# Build from source
+## Build from source
 ```
 git clone https://github.com/nshern/CardDeck.git
 cd CardDeck
