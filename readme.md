@@ -1,4 +1,9 @@
 # Usage
+````
+curl https://mycarddeck.azurewebsites.net/CardDeck
+````
+
+# Build from source
 ```
 git clone https://github.com/nshern/CardDeck.git
 cd CardDeck
